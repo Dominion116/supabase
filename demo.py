@@ -14,7 +14,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # supabase.table('demo-table').delete().eq('id', 2).execute()
 
-supabase.storage.from
+supabase.storage.from_('demo-bucket').upload('hello.txt', 'Hello, World!')
 
 results = supabase.table('demo-table').select('*').execute()
 print(results)
